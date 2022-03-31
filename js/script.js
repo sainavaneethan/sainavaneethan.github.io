@@ -9,7 +9,36 @@
   	 Main-Slider
   	=============================================== */ 
 $(document).ready(function() {
-
+$.validator.setDefaults({
+		submitHandler: function() {
+			alert("submitted!");
+		}
+	});
+$("#main-contact-form").validate({
+    rules: {
+      
+      name: 
+      {
+      required: true
+      },      
+      subject: 
+      {
+      required: true
+      },
+      
+      email: 
+      {
+      required: true,
+      email:true
+      },
+      
+      message:
+      {
+      required: true
+      }
+      }
+      
+  });
 	$(".more").click(function(){
 	$(this).closest( "p" ).find('.more').hide();
 	$(this).closest("div.media-body").find('p.p_more').show("slide", { direction: "down" });

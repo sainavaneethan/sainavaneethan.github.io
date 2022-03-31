@@ -426,26 +426,28 @@ Learn to apply concepts with 90+ cloud services and work with all relevant tools
         </ul>
       </div>
       <div class="col-md-6 col-sm-6">
-        <form id="main-contact-form" name="contact-form" method="post" action="mailto:info@modestotechs.com">
+        <form id="main-contact-form" name="contact-form" method="post" >
           <div class="row  wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
             <div class="col-sm-6">
               <div class="form-group">
-                <input type="text" name="name" class="form-control" placeholder="Name" required="required">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Name" required="required">
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <input type="email" name="email" class="form-control" placeholder="Email Address" required="required">
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email Address"  >
               </div>
             </div>
           </div>
           <div class="form-group">
-            <input type="text" name="subject" class="form-control" placeholder="Subject" required="required">
+            <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required="required">
           </div>
           <div class="form-group">
             <textarea name="message" id="message" class="form-control" rows="4" placeholder="Enter your message" required="required"></textarea>
           </div>
-          <a class="btn-send col-md-12 col-sm-12 col-xs-12" href="javascript:{}" onclick="document.getElementById('main-contact-form').submit();">Send Now</a>
+          <input class="btn-send col-md-12 col-sm-12 col-xs-12" type="submit" value="Send Now">
+
+          <!-- <a class="btn-send col-md-12 col-sm-12 col-xs-12" href="javascript:{}" >Send Now</a> -->
         </form>
       </div>
       
@@ -497,6 +499,7 @@ Learn to apply concepts with 90+ cloud services and work with all relevant tools
 <script type="text/javascript" src="js/owl.carousel.js"></script>
 <!--Main-Scripts-->
 <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 <!-- <div id="chatTogglerDiv" style="opacity: 1; bottom: 130px;"><img id="chatTogglerImg" src="https://hbchat.senseforth.com/HDFC_Chat/assets/EVA_newlogo2.0.svg"></div> -->
 </body>
 </html>

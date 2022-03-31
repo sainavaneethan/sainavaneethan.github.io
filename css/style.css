@@ -1378,3 +1378,22 @@ color:#fff;
     cursor: pointer;
 }
 /*Basic-Stylesheets-End-Here*/
+
+input.btn-send {
+    color: #e73131;
+    border: 2px solid #e73131;
+    padding: 2% 0%;
+    font-size: 15px;
+}
+.error{
+	color: red;
+}
+
+input.btn-send:hover {
+	background:#e73131;
+	color:#fff;
+	transition:all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
