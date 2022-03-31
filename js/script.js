@@ -11,7 +11,7 @@
 $(document).ready(function() {
 $.validator.setDefaults({
 		submitHandler: function() {
-			alert("submitted!");
+			// alert("submitted!");
 		}
 	});
 $("#main-contact-form").validate({
@@ -39,6 +39,25 @@ $("#main-contact-form").validate({
       }
       
   });
+
+ $('#main-contact-form').on('submit', function (e) {
+
+          e.preventDefault();
+           var $form = $(this);
+
+                // check if the input is valid
+                if(! $form.valid()) return false;
+          $.ajax({
+            type: 'post',
+            url: 'sendEmail.php',
+            data: $('#main-contact-form').serialize(),
+            success: function () {
+              alert('Email successfully sent');
+            }
+          });
+
+        });
+
 	$(".more").click(function(){
 	$(this).closest( "p" ).find('.more').hide();
 	$(this).closest("div.media-body").find('p.p_more').show("slide", { direction: "down" });
