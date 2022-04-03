@@ -516,7 +516,7 @@ Learn to apply concepts with 90+ cloud services and work with all relevant tools
         <div class="chat-header-title">
             Let’s chat? - We're online
         </div>
-        <div class="chat-header-option hide">
+        <div class="chat-header-option ">
             <span class="dropdown custom-dropdown">
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
@@ -605,14 +605,53 @@ Learn to apply concepts with 90+ cloud services and work with all relevant tools
         </div>
        
     </div> -->
-                              <div id="chat" class="chat-bodyf ">
+                                                      <div id="chat" class="chat-bodyf conv-form-wrapper">
                               <form action="" method="GET" class="hidden">
-                                  <select data-conv-question="Hello! This is an example use of the plugin to dynamically generate questions (like using an API). This is the only question that was written on the initial HTML. To end the loop, select END." name="first-question">
-                                      <option value="understood">Understood</option>
-                                      <option value="okay">Okay, captain!</option>
+                                  <select data-conv-question="Hello! I'm a bot created from a HTML form. Can I show you some features? (this question comes from a select)" name="first-question">
+                                      <option value="yes">Yes</option>
+                                      <option value="sure">Sure!</option>
+                                  </select>
+                                  <input type="text" name="name" data-conv-question="Alright! First, tell me your full name, please.|Okay! Please, tell me your name first.">
+                                  <input type="text" data-conv-question="Howdy, {name}:0! It's a pleasure to meet you. (note that this question doesn't expect any answer)" data-no-answer="true">
+                                  <input type="text" data-conv-question="This plugin supports multi-select too. Let's see an example." data-no-answer="true">
+                                  <select name="multi[]" data-conv-question="What kind of music do you like?" multiple>
+                                      <option value="Rock">Rock</option>
+                                      <option value="Pop">Pop</option>
+                                      <option value="Country">Country</option>
+                                      <option value="Classic">Classic</option>
+                                  </select>
+                                  <select name="programmer" data-callback="storeState" data-conv-question="So, are you a programmer? (this question will fork the conversation based on your answer)">
+                                      <option value="yes">Yes</option>
+                                      <option value="no">No</option>
+                                  </select>
+                                  <div data-conv-fork="programmer">
+                                      <div data-conv-case="yes">
+                                          <input type="text" data-conv-question="A fellow programmer! Cool." data-no-answer="true">
+                                      </div>
+                                      <div data-conv-case="no">
+                                        <select name="thought" data-conv-question="Have you ever thought about learning? Programming is fun!">
+                                          <option value="yes">Yes</option>
+                                          <option value="no">No..</option>
+                                        </select>
+                                      </div>
+                                  </div>
+                                  <input type="text" data-conv-question="convForm also supports regex patterns. Look:" data-no-answer="true">
+                                  <input data-conv-question="Type in your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="email" type="email" name="email" required placeholder="What's your e-mail?">
+                                  <input data-conv-question="Now tell me a secret (like a password)" type="password" data-minlength="6" id="senha" name="password" required placeholder="password">
+                  <select data-conv-question="Selects also support callback functions. For example, try one of these:">
+                      <option value="google" data-callback="google">Google</option>
+                      <option value="bing" data-callback="bing">Bing</option>
+                  </select>
+                                  <select name="callbackTest" data-conv-question="You can do some cool things with callback functions. Want to rollback to the 'programmer' question before?">
+                                      <option value="yes" data-callback="rollback">Yes</option>
+                                      <option value="no" data-callback="restore">No</option>
+                                  </select>
+                                  <select data-conv-question="This is it! If you like me, consider donating! If you need support, contact me. When the form gets to the end, the plugin submits it normally, like you had filled it." id="">
+                                      <option value="">Awesome!</option>
                                   </select>
                               </form>
                           </div>
+
 </div>
 <div class="chat-bot-icon">
   
