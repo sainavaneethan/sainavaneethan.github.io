@@ -79,7 +79,7 @@ $.validator.setDefaults({
  
 
            convForm = $('#chat').convform({selectInputStyle: 'disable'});
-            console.log(convForm);
+            
 
 
 
@@ -116,14 +116,23 @@ $("#main-contact-form").validate({
 
                 // check if the input is valid
                 if(! $form.valid()) return false;
-          $.ajax({
-            type: 'post',
-            url: 'sendEmail.php',
-            data: $('#main-contact-form').serialize(),
-            success: function () {
-              alert('Email successfully sent');
-            }
-          });
+          // $.ajax({
+          //   type: 'post',
+          //   url: 'sendEmail.php',
+          //   data: $('#main-contact-form').serialize(),
+          //   success: function () {
+          //     alert('Email successfully sent');
+          //   }
+          // });
+               var subject= $("#subject").val();
+                var body = $("#message").val() + "\r\n\r\n";
+                body +=  "SENDER NAME: " + $("#name").val()+ "\r\n\r\n";
+                body +=  "SENDER EMAIL: " + $("#email").val()+ "\r\n\r\n";
+                var uri = "mailto:info@modestotechs.com?subject=";
+                uri += encodeURIComponent(subject);
+                uri += "&body=";
+                uri += encodeURIComponent(body);
+                window.open(uri);
 
         });
 
