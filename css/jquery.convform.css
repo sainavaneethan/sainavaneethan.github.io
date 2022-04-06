@@ -203,8 +203,8 @@ div.conv-form-wrapper div#messages {
     /*max-height: 71vh;*/
 }
 div.conv-form-wrapper div.options {
-    word-wrap: normal;
-    white-space: nowrap;
+    word-wrap: break-word;
+    /*white-space: nowrap;*/
     overflow-x: scroll;
     position: absolute;
     bottom: 100%;
@@ -219,7 +219,7 @@ div.conv-form-wrapper div.options:after {
 div.conv-form-wrapper div.options div.option {
     padding: 7px 12px;
     /*border: 1px solid rgba(6,153,184,0.3);*/
-    display: inline-block;
+    /*display: inline-block;*/
     margin: 5px;
     /*background: #fff;*/
     /*color: #06c5a6;*/
